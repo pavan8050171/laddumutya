@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Studying Group Notes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 40px;
+    }
+    #notes {
+      display: none;
+      margin-top: 30px;
+    }
+    h1 {
+      font-size: 36px;
+      color: #333;
+    }
+    .password-box input, .password-box button {
+      padding: 10px;
+      margin-top: 10px;
+      width: 200px;
+    }
+    .subject {
+      background-color: #fff;
+      border-radius: 10px;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .subject h2 {
+      color: #007BFF;
+    }
+    .note-list {
+      list-style: none;
+      padding: 0;
+    }
+    .note-list li {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
 
+  <h1>📘 Studying Group</h1>
+  <p>Enter password to view notes.</p>
+
+  <div class="password-box">
+    <input type="password" id="password" placeholder="Enter password">
+    <br>
+    <button onclick="checkPassword()">Enter</button>
+  </div>
+
+  <div id="notes">
+    <!-- ADA -->
+    <div class="subject">
+      <h2>ADA (Analysis & Design of Algorithms)</h2>
+      <ul class="note-list">
+        <li><a href="notes/ada_unit1.pdf" download>Unit 1</a></li>
+        <li><a href="notes/ada_unit2.pdf" download>Unit 2</a></li>
+      </ul>
+    </div>
+
+    <!-- MATHS -->
+    <div class="subject">
+      <h2>MATHS</h2>
+      <ul class="note-list">
+        <li><a href="notes/maths_unit1.pdf" download>Unit 1</a></li>
+        <li><a href="notes/maths_unit2.pdf" download>Unit 2</a></li>
+      </ul>
+    </div>
+
+    <!-- BIO -->
+    <div class="subject">
+      <h2>BIO</h2>
+      <ul class="note-list">
+        <li><a href="notes/bio_unit1.pdf" download>Unit 1</a></li>
+        <li><a href="notes/bio_unit2.pdf" download>Unit 2</a></li>
+      </ul>
+    </div>
+
+    <!-- DBMS -->
+    <div class="subject">
+      <h2>DBMS</h2>
+      <ul class="note-list">
+        <li><a href="notes/dbms_unit1.pdf" download>Unit 1</a></li>
+        <li><a href="notes/dbms_unit2.pdf" download>Unit 2</a></li>
+      </ul>
+    </div>
+
+    <!-- MC -->
+    <div class="subject">
+      <h2>MC (Mobile Computing)</h2>
+      <ul class="note-list">
+        <li><a href="notes/mc_unit1.pdf" download>Unit 1</a></li>
+        <li><a href="notes/mc_unit2.pdf" download>Unit 2</a></li>
+      </ul>
+    </div>
+
+    <!-- FM -->
+    <div class="subject">
+      <h2>FM (Financial Management)</h2>
+      <ul class="note-list">
+        <li><a href="notes/fm_unit1.pdf" download>Unit 1</a></li>
+        <li><a href="notes/fm_unit2.pdf" download>Unit 2</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const correctPassword = "study123"; // You can change this
+      const input = document.getElementById("password").value;
+      if (input === correctPassword) {
+        document.querySelector('.password-box').style.display = 'none';
+        document.getElementById('notes').style.display = 'block';
+      } else {
+        alert("Incorrect password. Try again!");
+      }
+    }
+  </script>
+
+</body>
+</html>
